@@ -5,7 +5,7 @@ export PATH
 #=================================================
 #	System Required: CentOS/Debian/Ubuntu
 #	Description: ServerStatus client + server
-#	Version: 1.0.15
+#	Version: 1.0.16
 #	Author: Toyo
 #	Blog: https://doub.io/shell-jc3/
 #=================================================
@@ -65,7 +65,7 @@ check_pid_client(){
 }
 Download_Server_Status_server(){
 	cd "/tmp"
-	wget -N --no-check-certificate "https://github.com/ToyoDAdoubi/ServerStatus-Toyo/archive/master.zip"
+	wget -N --no-check-certificate "https://github.com/lusalem/ServerStatus-Toyo/archive/master.zip"
 	[[ ! -e "master.zip" ]] && echo -e "${Error} ServerStatus 服务端下载失败 !" && exit 1
 	unzip master.zip
 	rm -rf master.zip
@@ -100,7 +100,7 @@ Download_Server_Status_server(){
 }
 Download_Server_Status_client(){
 	cd "/tmp"
-	wget -N --no-check-certificate "https://raw.githubusercontent.com/ToyoDAdoubi/ServerStatus-Toyo/master/clients/status-client.py"
+	wget -N --no-check-certificate "https://raw.githubusercontent.com/lusalem/ServerStatus-Toyo/master/clients/status-client.py"
 	[[ ! -e "status-client.py" ]] && echo -e "${Error} ServerStatus 客户端下载失败 !" && exit 1
 	cd "${file_1}"
 	[[ ! -e "${file}" ]] && mkdir "${file}"
@@ -265,8 +265,8 @@ Set_server_http_port(){
 	while true
 		do
 		echo -e "请输入 ServerStatus 服务端中网站要设置的 域名/IP的端口[1-65535]（如果是域名的话，一般用 80 端口）"
-		read -e -p "(默认: 8888):" server_http_port_s
-		[[ -z "$server_http_port_s" ]] && server_http_port_s="8888"
+		read -e -p "(默认: 8080):" server_http_port_s
+		[[ -z "$server_http_port_s" ]] && server_http_port_s="8080"
 		echo $((${server_http_port_s}+0)) &>/dev/null
 		if [[ $? -eq 0 ]]; then
 			if [[ ${server_http_port_s} -ge 1 ]] && [[ ${server_http_port_s} -le 65535 ]]; then
