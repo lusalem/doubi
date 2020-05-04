@@ -7,7 +7,7 @@ export PATH
 #	Description: ServerStatus client + server
 #	Version: 1.0.16
 #	Author: Toyo
-#	Blog: https://doub.io/shell-jc3/
+#	Blog: https://lusalem.info
 #=================================================
 
 sh_ver="1.0.15"
@@ -325,7 +325,7 @@ Set_password(){
 	else
 		echo -e "请输入 ServerStatus 服务端中对应配置的密码[password]（字母/数字）"
 	fi
-	read -e -p "(默认: doub.io):" password_s
+	read -e -p "(默认: 1234qwer):" password_s
 	[[ -z "$password_s" ]] && password_s="1234qwer"
 	echo && echo "	================================================"
 	echo -e "	密码[password]: ${Red_background_prefix} ${password_s} ${Font_color_suffix}"
@@ -947,7 +947,7 @@ Update_Shell(){
 }
 menu_client(){
 echo && echo -e "  ServerStatus 一键安装管理脚本 ${Red_font_prefix}[v${sh_ver}]${Font_color_suffix}
-  -- Toyo | doub.io/shell-jc3 --
+  -- Toyo | lusalem/shell-jc3 --
   
  ${Green_font_prefix} 0.${Font_color_suffix} 升级脚本
  ————————————
@@ -1026,7 +1026,7 @@ esac
 }
 menu_server(){
 echo && echo -e "  ServerStatus 一键安装管理脚本 ${Red_font_prefix}[v${sh_ver}]${Font_color_suffix}
-  -- Toyo | doub.io/shell-jc3 --
+  -- Toyo | lusalem/shell-jc3 --
   
  ${Green_font_prefix} 0.${Font_color_suffix} 升级脚本
  ————————————
